@@ -7,7 +7,7 @@
 
   <body>
 
-    <h1>Form Input - Demo 2</h1>
+    <h1>Form Input - Area of a Circle</h1>
     <p>Demo of how to take form input and pass it to a program - all in a single page</p>
 
     <?php
@@ -17,7 +17,7 @@
        if ($_SERVER["REQUEST_METHOD"] == "POST") {
          $arg1 = test_input($_POST["arg1"]);
          $arg2 = test_input($_POST["arg2"]);
-         exec("/usr/lib/cgi-bin/pi/argtest2 " . $arg1 . " " . $arg2, $output, $retc); 
+         exec("/usr/lib/cgi-bin/sp1a/areaofcircle2 " . $arg1 . " " . $arg2, $output, $retc); 
        }
 
        function test_input($data) {
@@ -29,8 +29,8 @@
     ?>
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-      Arg1: <input type="text" name="arg1"><br>
-      Arg2: <input type="text" name="arg2"><br>
+      Smaller: <input type="text" name="arg1"><br>
+      Larger: <input type="text" name="arg2"><br>
       <br>
       <input type="submit" value="Go!">
     </form>
